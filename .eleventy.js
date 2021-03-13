@@ -87,6 +87,7 @@ const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
 const getPaths = require(`./${filtersDir}/get-paths`);
 const navigation = require(`./${filtersDir}/navigation`);
+const padStart = require(`./${filtersDir}/pad-start`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
@@ -206,6 +207,7 @@ module.exports = function (config) {
   config.addFilter('strip', strip);
   config.addFilter('courseToc', courseToc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
+  config.addFilter('padStart', padStart);
 
   // ----------------------------------------------------------------------------
   // SHORTCODES
