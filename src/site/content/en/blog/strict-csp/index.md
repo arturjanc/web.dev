@@ -541,13 +541,17 @@ CSP is supported by all major browsers, but you'll need two fallbacks:
 
 ```text
 Content-Security-Policy:
-  script-src 'nonce-{random}' 'strict-dynamic' https: 'unsafe-inline';
+  script-src 'nonce-{random}' 'strict-dynamic' 'report-sample' https: 'unsafe-inline';
   object-src 'none';
   base-uri 'none';
 ```
 {% Aside %}
 `https:` and `unsafe-inline` don't make your policy less safe
 because they will be ignored by browsers which support `strict-dynamic`.
+{% endAside %}
+
+{% Aside %}
+Assing `report-sample` will make it easier to debug any CSP violation reports.
 {% endAside %}
 
 ### Step 5:  Deploy your CSP
